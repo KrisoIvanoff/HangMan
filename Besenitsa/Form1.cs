@@ -17,18 +17,19 @@ namespace Besenitsa
             if (chosenWord.Contains(a))
             {
                 word.Text = "";
-                for (int i = 0; i < wordToChar.Length; i++)
+                for (int i = 0; i < wordToChar.Count; i++)
                 {
                     if (wordToChar[i] == a)
                     {
                         duma[i] = a;
                     }
                 }
-                for (int i = 0; i < duma.Length; i++)
+                for (int i = 0; i < duma.Count; i++)
                 {
                     word.Text += duma[i];
                 }
             }
+
             else
             {
                 UpdateImage();
@@ -53,7 +54,7 @@ namespace Besenitsa
 
         }
         string chosenWord = String.Empty;
-        char[] wordToChar = new char[20];
+        List<char> wordToChar = new();
         private void startgameBtn_Click(object sender, EventArgs e)
         {
             counter = 1;
@@ -62,15 +63,15 @@ namespace Besenitsa
             word.Text = String.Empty;
             int arrNum = rnd.Next(0, words.Length);
             chosenWord = words[arrNum];
-            wordToChar = chosenWord.ToCharArray();
+            wordToChar = chosenWord.ToCharArray().ToList();
             foreach (var item in chosenWord)
                 word.Text += "X";
             for (int i = 0; i < chosenWord.Length; i++)
             {
-                duma[i] = 'X';
+                duma.Add('X');
             }
         }
-        char[] duma = new char[20];
+        List<char> duma = new();
 
         private void aLbl_Click(object sender, EventArgs e)
         {

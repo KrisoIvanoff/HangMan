@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kriso\\Desktop\\NaKrisoBesenicata\\Besenitsa\\Besenitsa\\Besenitsa.csproj",
+      "projectUniqueName": "C:\\Users\\Kriso\\Desktop\\HangMan\\Besenitsa\\Besenitsa.csproj",
       "projectName": "Besenitsa",
-      "projectPath": "C:\\Users\\Kriso\\Desktop\\NaKrisoBesenicata\\Besenitsa\\Besenitsa\\Besenitsa.csproj",
+      "projectPath": "C:\\Users\\Kriso\\Desktop\\HangMan\\Besenitsa\\Besenitsa.csproj",
       "packagesPath": "C:\\Users\\Kriso\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kriso\\Desktop\\NaKrisoBesenicata\\Besenitsa\\Besenitsa\\obj\\",
+      "outputPath": "C:\\Users\\Kriso\\Desktop\\HangMan\\Besenitsa\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Kriso\\AppData\\Roaming\\NuGet\\NuGet.Config",
