@@ -12,8 +12,11 @@ namespace Besenitsa
 {
     public partial class Form1 : Form
     {
+        string guess = "";
         public void CheckIfLetterIsPresent(char a)
         {
+            guess = "";
+            List<char> wordRN = new();
             if (chosenWord.Contains(a))
             {
                 word.Text = "";
@@ -27,14 +30,23 @@ namespace Besenitsa
                 for (int i = 0; i < duma.Count; i++)
                 {
                     word.Text += duma[i];
+                    word.Text += " ";
+                    wordRN.Add(duma[i]);
                 }
             }
-
             else
             {
                 UpdateImage();
             }
-            if (word.Text == chosenWord)
+            for (int i = 0; i < wordRN.Count; i++)
+            {
+                guess += wordRN[i];
+                if (guess.Contains(' '))
+                {
+                    guess.Remove(' ');
+                }
+            }
+            if (guess == chosenWord)
             {
                 MessageBox.Show("Congrats!");
                 MakeThingsInActive();
@@ -57,7 +69,7 @@ namespace Besenitsa
         List<char> wordToChar = new();
         private void startgameBtn_Click(object sender, EventArgs e)
         {
-            counter = 1;
+            counter = 1;    
             pictureBox1.Image = null;
             MakeThingsActive();
             word.Text = String.Empty;
@@ -65,10 +77,12 @@ namespace Besenitsa
             chosenWord = words[arrNum];
             wordToChar = chosenWord.ToCharArray().ToList();
             foreach (var item in chosenWord)
-                word.Text += "X";
+            {
+                word.Text += "_ ";
+            }
             for (int i = 0; i < chosenWord.Length; i++)
             {
-                duma.Add('X');
+                duma.Add('_');
             }
         }
         List<char> duma = new();
