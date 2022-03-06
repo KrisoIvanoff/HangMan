@@ -56,7 +56,7 @@ namespace Besenitsa
         {
             InitializeComponent();
         }
-        string[] words = { "CAR", "HOUSE", "MOBIFON", "TRANJORNA", "FINGER", "KRASEN","SALAM", "MULTIMETUR", "OTVERTKA", "SALAMURA", "KLAVIATURA"};
+        string[] words = { "CAR", "HOUSE", "PATH", "ACTIVATE", "RETIREMENT", "SENTENCE", "DEVELOP", "MONEY","SENIOR","DEPARTURE", "SITE", "HARDWARE", "RATIONAL","EXPECT", "WOUND", "EXCLUDE", "WAITER","NAIL", "LIFT"};
         Random rnd = new Random();
 
         private void Form1_Load(object sender, EventArgs e)
@@ -65,24 +65,25 @@ namespace Besenitsa
             MakeThingsInActive();
 
         }
-        string chosenWord = String.Empty;
+        string chosenWord = "";
         List<char> wordToChar = new();
         private void startgameBtn_Click(object sender, EventArgs e)
         {
+            duma.Clear();
             counter = 1;    
             pictureBox1.Image = null;
             MakeThingsActive();
             word.Text = String.Empty;
             int arrNum = rnd.Next(0, words.Length);
             chosenWord = words[arrNum];
+            label3.Text = arrNum.ToString();
             wordToChar = chosenWord.ToCharArray().ToList();
+            label1.Text = chosenWord;
             foreach (var item in chosenWord)
             {
                 word.Text += "_ ";
-            }
-            for (int i = 0; i < chosenWord.Length; i++)
-            {
                 duma.Add('_');
+
             }
         }
         List<char> duma = new();
